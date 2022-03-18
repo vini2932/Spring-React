@@ -1,0 +1,5 @@
+package com.backend.agencia.repositorys;
+
+public class PassagemRepository {
+
+}

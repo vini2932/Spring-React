@@ -1,0 +1,36 @@
+package com.backend.agencia;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.backend.agencia.entities.Passageiro;
+import com.backend.agencia.entities.Passagem;
+import com.backend.agencia.repositorys.PassageiroRepository;
+import com.backend.agencia.repositorys.PassagemRepository;
+
+@SpringBootApplication
+public class AgenciaApplication implements CommandLineRunner {
+@Autowired
+PassagemRepository passrepo;
+@Autowired
+PassageiroRepository passagerepo;
+	public static void main(String[] args) {
+		SpringApplication.run(AgenciaApplication.class, args);
+	}
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+Passagem passagem1= new Passagem("Dubai", "3000.00",4,20,"2200.00","/Fotos/1_bp.jpg");
+Passagem passagem2= new Passagem("Ruanda", "3000.00",4,20,"2200.00","/Fotos/1_bp.jpg");
+	
+		
+		Passageiro passageiro= new Passageiro("Junior","Santos",21,2,passagem1);
+		passrepo.save(passagem1);
+		passrepo.save(passagem2);
+		passagerepo.save(passageiro);		
+		
+	}
+
+}

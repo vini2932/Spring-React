@@ -1,0 +1,8 @@
+package com.backend.agencia.models;
+
+public class Passagem {
+
+	
+	@Id
+	@Gem
+}

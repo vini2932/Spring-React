@@ -1,0 +1,88 @@
+package com.backend.agencia.entities;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+@Entity
+public class Passagem implements Serializable {
+	
+		private static final long serialVersionUID=1L;
+		@Id
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
+		private String Destino;
+		private float Preço;
+		private int diarias;
+		private int desconto;
+	private float semPromo;
+	
+		public long getId() {
+			return id;
+		}
+		public void setId(long id) {
+			this.id = id;
+		}
+		public String getDestino() {
+			return Destino;
+		}
+		public void setDestino(String destino) {
+			Destino = destino;
+		}
+		
+		
+		public int getDiarias() {
+			return diarias;
+		}
+		public void setDiarias(int diarias) {
+			this.diarias = diarias;
+		}
+		public int getDesconto() {
+			return desconto;
+		}
+		public void setDesconto(int desconto) {
+			this.desconto = desconto;
+		}
+		public float getPreço() {
+			return Preço;
+		}
+		public void setPreço(float preço) {
+			Preço = preço;
+		}
+		
+		public float getSemPromo() {
+			return semPromo;
+		}
+		public void setSemPromo(float semPromo) {
+			this.semPromo = semPromo;
+		}
+		public Passagem() {
+			super();
+		}
+		public Passagem(String destino, float preço, int diarias, int desconto, float semPromo) {
+			super();
+			Destino = destino;
+			Preço = preço;
+			this.diarias = diarias;
+			this.desconto = desconto;
+			this.semPromo = semPromo;
+		}
+		
+	}
+		
+
+		
+		
+		
+		//@JsonIgnore
+		//@OneToMany(mappedBy="autor")
+		//private List<Livro> livros = new ArrayList<Livro>();
+}
+
